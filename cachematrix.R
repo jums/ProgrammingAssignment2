@@ -1,7 +1,7 @@
 ## Tools to create matrix objects with ability to
 ## cache the inverse value and reuse the value.
 
-## Creates the special matrix object with cached inversion property.
+## Creates a cacheable matrix object.
 
 makeCacheMatrix <- function(x = matrix()) {
   i <- NULL
@@ -20,6 +20,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## Returns a (cacheMatrix) matrix that is the inverse of 'x'.
+## The ineverse is solved once and the value is reused on later calls.
 
 cacheSolve <- function(x, ...) {
   inv <- x$getInverse()
